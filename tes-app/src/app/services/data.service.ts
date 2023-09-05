@@ -18,14 +18,12 @@ export class DataService {
     return of(bookWithId);
   }
   editBook(book: IBook) {
-    console.log(book);
     let books = this.getBooksFromLocalstorage();
     books = [...books.filter((bookItem) => bookItem.id !== book.id), book];
     localStorage.setItem('booksStore', JSON.stringify(books));
     return of(book);
   }
   removeBook(book: IBook) {
-    console.log('remove');
     let books = this.getBooksFromLocalstorage();
     books = books.filter((bookItem) => bookItem.id !== book.id);
     localStorage.setItem('booksStore', JSON.stringify(books));

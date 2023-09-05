@@ -44,7 +44,6 @@ export class BookListComponent implements OnInit {
   }
 
   openDialog(bookData?: IBook) {
-    console.log('open dialog');
     this.dialog
       .open(DialogComponent, { data: bookData, width: '500px' })
       .afterClosed()
@@ -63,7 +62,6 @@ export class BookListComponent implements OnInit {
       .afterClosed()
       .subscribe((isConfirmed) => {
         if (isConfirmed) {
-          console.log(bookData);
           this.store.dispatch(BooksActions.removeBook({ book: bookData }));
         }
       });
