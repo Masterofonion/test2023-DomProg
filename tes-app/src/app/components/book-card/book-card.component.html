@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="container__inner flexed">
+    <div class="flexed">{{ bookData.name }}</div>
+    <div class="flexed">{{ bookData.author }}</div>
+  </div>
+  <div>
+    <app-icon-button (open)="edit.emit(bookData)" icon="edit"></app-icon-button>
+    <app-icon-button
+      (open)="remove.emit(bookData)"
+      icon="delete"
+    ></app-icon-button>
+  </div>
+</div>

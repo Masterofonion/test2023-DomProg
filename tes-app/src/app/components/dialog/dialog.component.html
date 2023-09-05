@@ -1,0 +1,39 @@
+<mat-card>
+  <form [formGroup]="bookInfoForm" action="">
+    <mat-card-header>
+      <mat-card-title>{{
+        data ? "Редактирование" : "Создание"
+      }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="w-300" appearance="fill">
+        <mat-label>Название</mat-label>
+        <input formControlName="name" matInput placeholder="Название" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Автор</mat-label>
+        <input formControlName="author" matInput placeholder="Автор" />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Год публикации</mat-label>
+        <input
+          formControlName="publicationDate"
+          matInput
+          placeholder="Год публикации"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Количество страниц</mat-label>
+        <input
+          formControlName="pageCount"
+          matInput
+          placeholder="Количество страниц"
+        />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="closeDialog(false)" mat-button>Принять</button>
+      <button (click)="closeDialog(true)" mat-button>Отмена</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
